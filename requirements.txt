@@ -1,3 +1,4 @@
 openpyxl
 plotly_express
 scikit-learn
+statsmodels
