@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 from sklearn.impute import SimpleImputer
 
-url_excel = "https://github.com/samrigol/MacroAnalysis/raw/master/seu_arquivo.xlsx"
+url_excel = "https://github.com/samrigol/MacroAnalysis/raw/master/database.xlsx"
 
 df_country_and_indicators = pd.read_excel(url_excel, sheet_name="Planilha1")
 indicadores = df_country_and_indicators["INDICATOR"]
