@@ -10,17 +10,17 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 from sklearn.impute import SimpleImputer
 
-file_path = "C:\\Users\\sam_r\\Desktop\\CODE\\PYTHON\\STREAMLIT\\MACRO3\\DADOS.xlsx"
+url_excel = "https://github.com/samrigol/MacroAnalysis/raw/master/seu_arquivo.xlsx"
 
-df_country_and_indicators = pd.read_excel(file_path, sheet_name="Planilha1")
+df_country_and_indicators = pd.read_excel(url_excel, sheet_name="Planilha1")
 indicadores = df_country_and_indicators["INDICATOR"]
 paises = df_country_and_indicators["Country Name"]
 
-df_metadata = pd.read_excel(file_path, sheet_name="METADATA")
+df_metadata = pd.read_excel(url_excel, sheet_name="METADATA")
 
 # OTIMIZAÇÃO PARA LEITURA DO ARQUIVO
-def ler_arquivo_excel(file_path):
-    df = pd.read_excel(file_path, sheet_name="DADOS_FILTRADOS")
+def ler_arquivo_excel(url_excel):
+    df = pd.read_excel(url_excel, sheet_name="DADOS_FILTRADOS")
     df['YEAR'] = pd.to_datetime(df['YEAR'], format='%Y')
     df['YEAR'] += pd.offsets.DateOffset(month=1, day=1)
     return df
@@ -40,7 +40,7 @@ with st.sidebar:
     coluna_selecionada_2 = st.selectbox("Selecione a variável para X", indicadores)
 
 
-df = ler_arquivo_excel(file_path)
+df = ler_arquivo_excel(url_excel)
 
 # 
 anos_unicos = df['YEAR'].dt.year.unique()
