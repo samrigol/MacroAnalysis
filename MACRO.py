@@ -7,7 +7,7 @@ import plotly.graph_objs as go
 import statsmodels.api as sm
 from sklearn.impute import SimpleImputer
 
-url_excel = "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fsamrigol%2FMacroAnalysis%2Fmain%2Fdatabase.xlsx&wdOrigin=BROWSELINK"
+url_excel = "https://raw.githubusercontent.com/samrigol/MacroAnalysis/main/database.xlsx"
 
 df_country_and_indicators = pd.read_excel(url_excel, sheet_name="Planilha1")
 indicadores = df_country_and_indicators["INDICATOR"]
