@@ -1,13 +1,10 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-#import openpyxl
+import openpyxl
 import plotly.express as px
 import plotly.graph_objs as go
 import statsmodels.api as sm
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
 from sklearn.impute import SimpleImputer
 
 url_excel = "https://github.com/samrigol/MacroAnalysis/raw/master/database.xlsx"
